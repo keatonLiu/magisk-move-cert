@@ -1,0 +1,16 @@
+# frida.rc - Start frida-server on boot and auto-restart if it crashes
+
+service florida-server /data/local/tmp/fs -l 0.0.0.0
+    class main
+    user root
+    group root
+    seclabel u:r:init:s0
+    disabled
+
+# Start after boot completes
+on property:sys.boot_completed=1
+    start florida-server
+
+# Optional: Restart if it crashes (with a small delay to avoid flooding)
+onrestart
+    exec -- /system/bin/sleep 2

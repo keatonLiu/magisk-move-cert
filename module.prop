@@ -1,7 +1,7 @@
-id=template
-name=Template Module
+id=frida-launcher
+name=Frida Server Launcher
 version=v1
 versionCode=1
-author=topjohnwu
+author=liuxiaotong
 description=A short description
 template=3
