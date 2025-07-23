@@ -42,7 +42,7 @@ if [ -d /apex/com.android.conscrypt/cacerts ]; then
     rm -rf /data/local/tmp/adg-ca-copy
     mkdir -p /data/local/tmp/adg-ca-copy
     mount -t tmpfs tmpfs /data/local/tmp/adg-ca-copy
-    cp -f /apex/com.android.conscrypt/* /data/local/tmp/adg-ca-copy/
+    cp -f /apex/com.android.conscrypt/cacerts/* /data/local/tmp/adg-ca-copy/
     cp -f /debug_ramdisk/.magisk/modules/move-cert/system/apex/com.android.conscrypt/cacerts/* /data/local/tmp/adg-ca-copy/
 else
     echo "[i] APEX container not found, this must be Android < 14"
