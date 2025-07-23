@@ -1,7 +1,7 @@
-id=frida-launcher
-name=Frida Server Launcher
+id=move-cert
+name=Move certificates
 version=v1
 versionCode=1
-author=liuxiaotong
-description=A short description
+author=keaton
+description=Move user certificates to system store
 template=3
