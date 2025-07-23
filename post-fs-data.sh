@@ -39,10 +39,11 @@ if [ -d /apex/com.android.conscrypt/cacerts ]; then
     echo "[i] cert location exists in APEX"
     echo "[i] copying cert to APEX container"
     echo "[i] clone directory into tmpfs"
-    rm -f /data/local/tmp/adg-ca-copy
+    rm -rf /data/local/tmp/adg-ca-copy
     mkdir -p /data/local/tmp/adg-ca-copy
     mount -t tmpfs tmpfs /data/local/tmp/adg-ca-copy
-    cp -f /apex/com.android.conscrypt/cacerts/* /data/local/tmp/adg-ca-copy/
+    cp -f /apex/com.android.conscrypt/* /data/local/tmp/adg-ca-copy/
+    cp -f /debug_ramdisk/.magisk/modules/move-cert/system/apex/com.android.conscrypt/cacerts/* /data/local/tmp/adg-ca-copy/
 else
     echo "[i] APEX container not found, this must be Android < 14"
 fi
